@@ -11,7 +11,8 @@ angular.module('annClientApp')
   .service('Api', function ($http, $q) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     
-    var URL = 'http://localhost:9001/api/';
+    //var URL = 'http://localhost:9001/api/';
+    var URL = 'http://localhost:8080/api/';
     function all(entity) {
       var requestURL = URL + entity;
       return $http.get(requestURL)

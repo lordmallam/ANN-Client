@@ -8,7 +8,7 @@
  * Controller of the annClientApp
  */
 angular.module('annClientApp')
-  .controller('LoginCtrl', function (Shared, Api, Auth, $location, User, toastr) {
+  .controller('LoginCtrl', function (Shared, Api, Auth, $location, User, toastr, pouchdb) {
     var vm = this;
     Api.all('states')
       .then(res => {
@@ -43,9 +43,8 @@ angular.module('annClientApp')
               });
           })
           .catch(err => {
-            console.log(err);
             err.data ? toastr.error(err.data && err.data.message, err.data && err.data.error) :
-              toastr.error(err.message, err.error)
+            toastr.error(err.message, err.error)
             vm.error = err.message;
             vm.password = '';
           });
