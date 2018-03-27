@@ -1,0 +1,100 @@
+<div ng-include="'components/nav/header.user.html'"></div>
+<div class="ui grid">
+      <div class="row">
+        <div ng-include="'components/nav/sidebar.html'"></div>
+        <div class="column" id="content">
+          <div class="ui grid">
+            <div id="dashboard-box" class="two column aligned row profile">
+              <div class="three wide column">
+                    <img class="ui medium bordered image" src="{{profile.photo}}">
+              </div>
+              <div class="thirteen wide column">
+                <div>
+                    <h2 class="ui header name-txt">{{profile.member.firstname}} {{profile.member.surname}}</h2>
+                    <p class="group-txt">
+                      <span ng-repeat="role in profile.roles">
+                        Roles: {{role}} | 
+                      </span><br />
+
+                      <span style="font-weight: bold; color: gray; font-size: 10px">
+                        MEMBER SINCE {{profile.member.createdOn | date: 'dd MMMM, yyyy'}}
+                      </span>
+                            <span class="ui red horizontal label member-status" ng-if="profile.member.status === 'inactive'">Not Active</span>
+                      <span class="ui green horizontal label member-status" ng-if="profile.member.status === 'completed' || profile.member.status === 'active'">Active</span>
+                            <!-- Active use green color (change red to green) -->
+                    </p>
+                    
+                    <div>   
+                            <a class="ui blue button edit-btn" ng-href="/confirmation/{{profile.member.activationCode}}/{{profile.member._id}}">
+                                    <i class="edit icon"></i>
+                                    Edit Profile
+                            </a>
+                    </div>
+
+                    <div class="ui pointing secondary menu">
+                      <tab class="item active" icon="user icon" data-tab="first" style="cursor:pointer">
+                      Basic Information
+                      </tab>
+                      <tab class="item" data-tab="last" icon="user circle icon" style="cursor:pointer">
+                      Next of Kin
+                      </tab>
+                    </div>
+                          <div class="ui tab segment grid active no-shadow" data-tab="first">
+                            
+                                <div class="four wide column">
+                                   <p><strong>Sex:</strong> </p> 
+                                   <p><strong>Birthday:</strong> </p> 
+                                   <p><strong>Phone Number:</strong> </p> 
+                                   <p><strong>Email Address:</strong> </p> 
+                                   <p><strong>Address:</strong> </p>
+                                  <p><strong>State:</strong> </p>
+                                  <p><strong>Local Government Area:</strong> </p> 
+
+                                </div>
+
+                                <div class="eight wide column">
+                                   <p>{{profile.member.sex || '--'}}</p> 
+                                   <p>{{profile.member.dateOfBirth | date:'dd MMMM, yyyy' || '--'}}</p> 
+                                   <p>{{profile.member.phone || '--'}}</p> 
+                                   <p>{{profile.member.email || '--'}}</p> 
+                                   <p>{{profile.member.residenceAddress || '--'}}</p>
+                                  <p>{{profile.state || '--'}}</p>
+                                  <p>{{profile.lga || '--'}}</p>
+                                </div>
+                          </div>
+                          <div class="ui tab segment grid no-shadow" data-tab="last">
+                            
+                                <div class="four wide column">
+                                   <p><strong>Name:</strong> </p> 
+                                   <p><strong>Birthday:</strong> </p> 
+                                   <p><strong>Sex:</strong> </p> 
+                                   <p><strong>Email Address:</strong> </p> 
+                                   <p><strong>Phone Number:</strong> </p>
+                                  <p><strong>State:</strong> </p>
+                                  <p><strong>Nationality:</strong> </p> 
+
+                                </div>
+
+                                <div class="eight wide column">
+                                   <p>{{profile.member.nok.firstname || '--'}} {{profile.member.nok.surname}}</p> 
+                                   <p>{{profile.member.nok.dateOfBirth | date:'dd MMMM, yyyy' || '--'}}</p> 
+                                   <p>{{profile.member.nok.sex || '--'}}</p> 
+                                   <p>{{profile.member.nok.email || '--'}}</p> 
+                                   <p>{{profile.member.nok.phone || '--'}}</p>
+                                  <p>{{profile.nokstate || '--'}}</p>
+                                  <p>{{profile.member.nok.nationality || '--'}}</p>
+                                </div>
+                          </div>
+                          
+                </div>
+              </div>
+            
+            </div>
+            <div class="ui hidden section divider"></div>
+            <div class="row">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

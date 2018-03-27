@@ -1,0 +1,80 @@
+.image-upload-btn-md {
+  padding: 15px;
+  background-color: #e5e5e5;
+}
+
+.image-upload-image-md {
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.image-upload .md {
+  border: 1px solid #e5e5e5;
+}
+
+.image-upload-image-sm {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #bebebe;
+}
+
+.image-upload-btn-sm {
+  padding: 10px 15px 10px 20px;
+  background-color: #e5e5e5;
+  position: relative;
+  left: 55px;
+  top: 20px;
+  width: calc(100% - 55px);
+}
+
+.image-upload .sm {
+  position: relative;
+  min-height: 100px;
+}
+
+.image-upload-corners-5-top {
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.image-upload-cursor-pointer {
+  cursor: pointer;
+}
+
+.image-upload-text-center {
+  text-align: center;
+}
+
+.image-upload-font-small {
+  font-size: small !important;
+}
+
+.image-upload-fontColorLightBlue {
+  color: #3bb5d5;
+}
+
+.image-upload-fontColorGrey {
+  color: #999999;
+}
+
+.image-upload-corners-5-right {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

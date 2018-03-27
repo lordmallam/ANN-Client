@@ -1,0 +1,64 @@
+<div ng-include="'components/nav/header.user.html'"></div>
+<div class="ui grid">
+      <div class="row">
+        <div ng-include="'components/nav/sidebar.html'"></div>
+        <div class="column" id="content">
+          <div class="ui grid-inner">
+            <div id="dashboard-box" class="two column aligned row profile">
+              <div class="sixteen wide column">
+                <div>
+                    <h2 class="ui header name-txt inline-display">Assign Agents</h2>
+                    <div class="ui input right floated pull-right" style="padding: 10px 0;"><input type="text" placeholder="Member Email..." ng-model="newAgent.searchText"/>
+                      <button class="ui button primary sign-in-btn" tabindex="0" ng-click="newAgent.search($event)">Find</button>
+                    </div>
+                          <div>
+                            <span style="padding: 10px">{{newAgent.members.length}} members found</span>
+                            <table class="ui celled table">
+                              <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Surname</th>
+                                  <th>Date of birth</th>
+                                  <th>Sex</th>
+                                  <th>Email</th>
+                                  <th>Phone</th>
+                                  <th>State</th>
+                                  <th>Local Govt.</th>
+                                  <th>Status</th>
+                                  <th></th>
+                              </tr></thead>
+                              <tbody>
+                                <tr ng-repeat="member in newAgent.members | filter:newAgent.searchText">
+                                  <td>{{member.firstname}}</td>
+                                  <td>{{member.surname}}</td>
+                                  <td>{{member.dateOfBirth | date: 'dd MMM, yyyy'}}</td>
+                                  <td>{{member.sex}}</td>
+                                  <td>{{member.email}}</td>
+                                  <td>{{member.phone}}</td>
+                                  <td>{{newAgent.getState(member.state)}}</td>
+                                  <td>{{newAgent.getLGA(member.lga)}}</td>
+                                  <td>
+                                    <div class="indicator" ng-class="{red: member.status==='inactive', green: member.status === 'completed', orange: member.status==='started'}"></div>
+                                    &nbsp;&nbsp;
+                                    {{newAgent.getStatus(member.status)}}
+                                  </td>
+                                  <td>
+                                    <span ng-if="member.status==='completed'" ng-click="newAgent.assign(member)" title="Make an Agent"><i class="fa fa-user-secret" style="font-size: 20px; cursor:pointer;"></i></span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                </div>
+              </div>
+            
+            </div>
+            <div class="ui hidden section divider"></div>
+            <div class="row">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+

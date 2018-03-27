@@ -1,0 +1,29 @@
+<div id="login-page" class="ui two column grid site-box">
+        <div class="row no-padding">
+            <div class="column no-padding img-section">
+                
+            </div>
+            <div id="right-pane" class="column ui padded segment">
+                <img class="ui centered image" src="images/Aliance-logo.png" />
+                <h2 class="ui header centered padd-title h-title">Sign in to your Account Here</h2>
+                <form class="ui fluid form">
+                    <div class="field">
+                        <input type="text" placeholder="Email" ng-model="login.email">
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" ng-model="login.password">
+                    </div>
+                    <div class="ui center aligned header">
+                        <button class="ui primary button sign-in-btn" ng-click="login.login()">
+                            Sign in
+                         </button>
+
+                        <div class="ui center aligned header f-pass-txt"><a href="#">Forgot Password?</a></div>
+                      <br />
+                      <span class="error">{{login.error}}</span>
+                    </div>
+                    <div class="ui small-txt center aligned header footer-txt">Copyright Alliance for new Nigeria, 2017</div>
+                </form>
+            </div>
+        </div>
+    </div>

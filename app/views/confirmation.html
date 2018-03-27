@@ -1,0 +1,176 @@
+<div ng-if="!confirmation.isUser" ng-include="'components/nav/header.html'"></div>
+<div ng-if="confirmation.isUser" ng-include="'components/nav/header.user.html'"></div>
+<div ng-if="confirmation.isUser" style="height: 90px"></div>
+<div id="form-box" class="container-fluid">
+  <div class="ui one column grid container">
+    <div class="row form-container no-margin-top">
+      <div class="ui three steps step-bg">
+
+        <tab class="link step active" icon="user" data-tab="info" id="infoTab">
+          <div class="content">
+            <div class="title">Personal Info</div>
+            <div class="description">Enter your information below</div>
+          </div>
+        </tab>
+
+        <tab class="link step" icon="user circle" data-tab="kin" id="kinTab">
+          <div class="content">
+            <div class="title">Next of Kin</div>
+            <div class="description">Enter Kin information</div>
+          </div>
+        </tab>
+      </div>
+      <div class="error-div" ng-if="confirmation.errorfields">{{confirmation.errorfields}}</div>
+      <div class="ui attached segment active no-radius tab" data-tab="info" id="infoTabDiv">
+        <form class="ui form">
+          <h4 class="ui dividing header">Personal Information</h4>
+          <div class="field required">
+            <label>Name</label>
+            <div class="two fields">
+              <div class="field">
+                <input type="text" name="firstname" placeholder="First Name" ng-model="confirmation.member.firstname">
+              </div>
+              <div class="field">
+                <input type="text" name="surname" placeholder="Surname" ng-model="confirmation.member.surname">
+              </div>
+            </div>
+          </div>
+          <div class="two fields required">
+            <div class="field">
+              <label>Date of Birth</label>
+              <date-picker ng-model="confirmation.member.dateOfBirth" id="dob" initial-date="{{confirmation.initialDOB}}"></date-picker>
+            </div>
+            <div class="field">
+              <label>Sex</label>
+              <select class="ui fluid dropdown" ng-model="confirmation.member.sex">
+                <option value="">Sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="two fields required">
+            <div class="field">
+              <label>Phone Number</label>
+              <input type="text" name="phoneNumber" placeholder="Phone Number" ng-model="confirmation.member.phone">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="text" name="email" placeholder="Email Address" readonly ng-model="confirmation.member.email">
+            </div>
+          </div>
+          <div class="two fields required">
+            <div class="field">
+              <label>State</label>
+              <select class="ui fluid dropdown" ng-model="confirmation.member.state" ng-change="confirmation.getLGAs()">
+                <option value="" selected disabled>Select State of Origin</option>
+                <option ng-repeat="state in confirmation.states" value="{{state._id}}">{{state.name}}</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Local Government</label>
+              <select class="ui fluid dropdown" ng-model="confirmation.member.lga">
+                <option value="" selected disabled>Select LGA</option>
+                <option ng-repeat="lga in confirmation.lgaByState" value="{{lga._id}}">{{lga.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="field required">
+              <label>Residence Address</label>
+              <input type="text" name="residence" placeholder="Residence Address" ng-model="confirmation.member.residenceAddress">
+            </div>
+            <div class="field">
+              <label>Business Address</label>
+              <input type="text" placeholder="Business Address" ng-model="confirmation.member.businessAddress">
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="field required">
+              <label>Photo</label>
+              <image-upload ng-model="confirmation.photofile" base64="confirmation.member.photo" mode="sm" src="confirmation.src">
+
+              </image-upload>
+            </div>
+            <div class="field">
+              
+            </div>
+          </div>
+          <div>
+            <div class="column-right">
+              <tab data-tab="kin"><button class="ui button primary sign-in-btn" tabindex="0" ng-click="confirmation.moveToKin($event)">Next</button></tab>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="ui attached segment no-radius tab" data-tab="kin" id="kinTabDiv">
+        <form class="ui form">
+          <h4 class="ui dividing header">Next of Kin Information</h4>
+          <div class="field">
+            <label>Name</label>
+            <div class="two fields">
+              <div class="field">
+                <input type="text" name="shipping[first-name]" placeholder="First Name" ng-model="confirmation.member.nok.firstname">
+              </div>
+              <div class="field">
+                <input type="text" name="shipping[last-name]" placeholder="Surname" ng-model="confirmation.member.nok.surname">
+              </div>
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="field">
+              <label>Date of Birth</label>
+              <date-picker ng-model="confirmation.member.nok.dateOfBirth" id="nokdob"></date-picker>
+            </div>
+            <div class="field">
+              <label>Sex</label>
+              <select class="ui fluid dropdown" ng-model="confirmation.member.nok.sex">
+                <option value="">Sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="two fields">
+            <div class="field">
+              <label>Phone Number</label>
+              <input type="text" pname="nok[phone]" laceholder="Phone Number" ng-model="confirmation.member.nok.phone">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" name="nok[email]" placeholder="Email Address" ng-model="confirmation.member.nok.email">
+            </div>
+          </div>
+
+          <div class="two fields">
+            <div class="field">
+              <label>State of Origin</label>
+              <select class="ui fluid dropdown" ng-model="confirmation.member.nok.state">
+                <option value="" selected disabled>Select State of Origin</option>
+                <option ng-repeat="state in confirmation.states" value="{{state._id}}">{{state.name}}</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Nationality</label>
+              <input type="text" name="shipping[last-name]" placeholder="Nationality" ng-model="confirmation.member.nok.nationality">
+            </div>
+          </div>
+
+          <div>
+            <div class="column-right">
+              <button class="ui button primary sign-in-btn" tabindex="0" ng-click="confirmation.register($event)">Submit</button>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+
+
+
+  </div>
+</div>

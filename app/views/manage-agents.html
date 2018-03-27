@@ -1,0 +1,48 @@
+<div ng-include="'components/nav/header.user.html'"></div>
+<div class="ui grid">
+      <div class="row">
+        <div ng-include="'components/nav/sidebar.html'"></div>
+        <div class="column" id="content">
+          <div class="ui grid">
+            <div id="dashboard-box" class="two column aligned row profile">
+              <div class="sixteen wide column">
+                <div>
+                    <h2 class="ui header name-txt inline-display">Manage Agents</h2>
+                    <div class="ui input right floated pull-right" style="padding: 10px 0;"><input type="text" placeholder="Search..." ng-model="manageAgents.searchText"/></div>
+                          <div>
+                            <span style="padding: 10px">{{manageAgents.filterData.length}} agents found</span>
+                            <table class="ui celled table">
+                              <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Surname</th>
+                                  <th>Username</th>
+                                  <th><a class="ui button primary pull-right" href="/new-agent"><i class="fa fa-plus" style="font-size: 12px; cursor:pointer;"></i>&nbsp;&nbsp; Add New Agent</a></th>
+                              </tr></thead>
+                              <tbody>
+                                <tr ng-repeat="agent in manageAgents.filterData = (manageAgents.agents | filter:manageAgents.searchText ) | limitTo:manageAgents.pageSize:manageAgents.pageSize*(manageAgents.currentPage-1) ">
+                                  <td>{{agent.firstname}}</td>
+                                  <td>{{agent.surname}}</td>
+                                  <td>{{agent.email}}</td>
+                                  <td>
+                                    <span ng-click="manageAgents.delete(agent)" title="Remove as agent" class="pull-right"><i class="fa fa-trash" style="font-size: 20px; cursor:pointer; color: orangered"></i></span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <ul uib-pagination boundary-links="true" total-items="manageAgents.filterData.length" items-per-page="manageAgents.pageSize" ng-model="manageAgents.currentPage" class="pagination-sm pull-right" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+                          </div>
+                </div>
+              </div>
+            
+            </div>
+            <div class="ui hidden section divider"></div>
+            <div class="row">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+

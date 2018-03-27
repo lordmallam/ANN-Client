@@ -1,0 +1,7 @@
+<div id="page-header" class="ui inverted huge borderless fixed fluid menu" ng-controller="HeaderUserCtrl as headeruser">
+      <img class="ui image" src="../../images/logo.png" width="70px" height="70px" />
+      <div class="right menu">
+        <a class="item" href="/profile"><i class="user circle icon"></i> {{headeruser.user.member.firstname || headeruser.user.name}}</a>
+        <a class="item" ng-click="headeruser.logout()"><i class="sign out icon"></i> Logout</a>
+      </div>
+    </div>

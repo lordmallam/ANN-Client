@@ -1,0 +1,311 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #999999 !important;
+}
+
+.small-txt {
+  font-size: 0.6em !important;
+  font-weight: normal !important;
+  color: #666666 !important;
+}
+
+#login-page .no-padding {
+  padding: 0;
+}
+
+#right-pane {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+  #right-pane .h-title {
+    color: #78C0E6;
+    font-weight: 400;
+  }
+
+#login-page .sign-in-btn {
+  border-radius: 40px;
+  background: #78C0E6;
+  color: #ffffff;
+  margin-top: 2em;
+  padding: 15px 40px;
+}
+
+#login-page .sign-in-btn:hover {
+  background: #2d88b8;
+}
+
+#form-box .sign-in-btn {
+  border-radius: 40px;
+  background: #78C0E6;
+  color: #ffffff;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 15px 40px;
+}
+
+.error {
+  font-size: 16px;
+  color:#ffbb00;
+}
+
+  #form-box .sign-in-btn:hover {
+    background: #2d88b8;
+  }
+
+#form-box h4 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#right-pane .padd-title, #right-pane .field {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+  #right-pane .field input {
+    border: none;
+    border-bottom: 1px solid #78C0E6;
+  }
+
+#right-pane img {
+  margin-top: 3em;
+}
+
+#login-page {
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+  #login-page .img-section {
+    background: url(../images/side-img.png) center center repeat;
+  }
+
+  #login-page .f-pass-txt {
+    font-size: 0.7em;
+    color: #999999;
+  }
+
+  #login-page .footer-txt {
+    margin-top: 9em;
+    font-size: 0.8em !important;
+    color: #999999 !important;
+  }
+
+#form-box .step-bg {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.container-fluid {
+  background: #F5F9FA;
+}
+
+#header .header-sm-txt {
+  font-size: 0.8em;
+  text-align: right;
+  padding-top: 2em;
+  color: #999999;
+}
+
+#header .login-txt {
+  padding-left: 5px;
+}
+
+#header .space-me {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#login-txt-bx {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#form-box .no-radius {
+  border-radius: 0px;
+  border: none;
+}
+
+#form-box .ui.steps .step {
+  color: #999999;
+}
+
+#form-box .form-container {
+  background: #ffffff;
+  min-height: 80vh;
+  margin: 10px 0px 10px 0px;
+}
+
+
+#footer-page .footer-txt {
+  margin-top: 1.5em;
+  font-size: 0.8em !important;
+  color: #999999 !important;
+}
+
+#form-box .ui.ordered.steps .step.active:before, .ui.steps .active.step .icon, #form-box .ui.steps .step.active .title {
+  color: #78C0E6;
+}
+
+
+
+#form-box .success-msg {
+  background: #ffffff;
+  text-align: center;
+  margin-top: 3em;
+}
+
+#my-icon i.icon, #my-ico i.icons {
+  font-size: 3em;
+  color: #9BC96E;
+}
+
+.centralized {
+  margin: 0 auto;
+  display: table !important;
+}
+
+.msg-panel {
+  max-width: 700px;
+  min-width: 300px;
+  margin-top: 100px !important;
+  padding: 30px 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  align-items: center;
+  text-align: center;
+}
+
+.green {
+  color:#23c37a;
+}
+
+.ui.grid {
+  margin-bottom: 0 !important;
+  margin-top:0 !important;
+}
+
+.required label::after {
+  content: " *";
+  color: #f71919;
+  font-size: 14px;
+  padding-top: 3px;
+}
+
+.error-div {
+  padding: 5px 15px;
+  background-color: #ff7d00;
+  color: #fff;
+  width: 100%;
+}
+
+.column-right{
+  width: 20%;
+  float:right;
+  padding: 10px;
+  text-align: right;
+}
+
+.clear{
+  clear:both;
+}
+
+.ui.steps .step.active {
+background-color: #78C0E6 !important;
+}
+#form-box .ui.ordered.steps .step.active:before, .ui.steps .active.step .icon, #form-box .ui.steps .step.active .title {
+color:#fff !important;
+}
+
+.ui.steps .step.active:after {
+ background-color:#78C0E6 !important;
+}
+
+.ui.steps .step.active .description {
+  color: #fff !important;
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+

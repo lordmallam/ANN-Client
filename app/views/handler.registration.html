@@ -1,0 +1,17 @@
+<div>
+  <div class="centralized msg-panel">
+      <i class="fa fa-paper-plane fa-3x green"></i><br /><br />
+    <span>
+      An email has been sent to the provided email address 
+    </span>
+    <span><i>{{handlerReg.user.email}}</i></span>
+    <br />
+    <span>Follow the link from the mail to confirm your email address and continue your registration process.</span>
+    <br />
+    <br />
+    <button class="ui button" ng-click="handlerReg.sendActivationMail()">Resend Link</button>
+    <br />
+    <br />
+    <span>{{handlerReg.message}}</span>
+  </div>
+</div>

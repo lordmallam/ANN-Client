@@ -1,0 +1,17 @@
+<div class="image-upload">
+    <input type="file" id="file" class="hide" onchange="angular.element(this).scope().loadImage(this)"/>
+    <div ng-show="mode==='md'" class="md image-upload-corners-5-top">
+        <div id="img-node-md" class="image-upload-image-md corners-5-top" ng-style="{'height' : imageHeight + 'px', 'background-image': src }"></div>
+    <div class="image-upload-btn-md image-upload-cursor-pointer image-upload-text-center" ng-click="showFile()">
+        <b><span class="image-upload-fontColorLightBlue image-upload-cursor-pointer">Choose an image from your computer</span></b><br />
+        <span class="image-upload-fontColorGrey image-upload-font-small image-upload-cursor-pointer">PNG, JPEG, BMP or GIF * file limit 10MB</span><br />
+        <span class="image-upload-fontColorGrey image-upload-font-small image-upload-cursor-pointer">Recommended size is 800x480 * aspect ratio 4:3</span>
+    </div>
+    </div>
+    <div ng-show="mode==='sm'" class="sm">  
+        <div class="image-upload-btn-sm image-upload-cursor-pointer image-upload-text-center  image-upload-corners-5-right" ng-click="showFile()">
+        <b><span class="image-upload-fontColorLightBlue image-upload-cursor-pointer">Choose an image from your computer</span></b><br />
+        </div>
+        <div id="img-node-sm" class="image-upload-image-sm" ng-style="{'background-image': src }"></div>
+    </div>
+</div>

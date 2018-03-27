@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\scripts",
+    "\\app\\scripts\\controllers",
+    "\\app\\scripts\\services",
+    "\\app\\views",
+    "\\bower_components"
+  ],
+  "SelectedNode": "\\app\\scripts\\controllers\\new-agent.js",
+  "PreviewInSolutionExplorer": false
+}

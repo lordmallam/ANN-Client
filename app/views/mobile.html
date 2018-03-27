@@ -1,0 +1,24 @@
+<div ng-include="'components/nav/header.html'"></div>
+<div id="form-box" class="container-fluid">
+  <div class="ui one column grid container">
+    <div class="row form-container no-margin-top">
+      <div class="column no-padding">
+        <div class="ui success-msg">
+          <span id="my-icon"><i class="check circle icon"></i></span>
+          <div>
+            <h3>
+              Hi {{mobile.member.firstname}}
+            </h3>
+            <p>Thank you for registering with Alliance for New Nigeria</p>
+            <p>Click on the link below to activate your account</p>
+          </div>
+          <div class="ui centered aligned header">
+            <button class="ui button primary sign-in-btn" tabindex="0" ng-click="mobile.activate()">
+              Activate my account
+            </button>
+          </div>
+        </div>
+      </div>
+      </div>
+</div>
+</div>
