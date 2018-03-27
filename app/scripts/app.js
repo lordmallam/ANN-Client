@@ -17,8 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'toastr',
-    'ui.bootstrap',
-    'pouchdb'
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider, $locationProvider, $qProvider, $httpProvider) {
 

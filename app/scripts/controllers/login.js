@@ -8,7 +8,7 @@
  * Controller of the annClientApp
  */
 angular.module('annClientApp')
-  .controller('LoginCtrl', function (Shared, Api, Auth, $location, User, toastr, pouchdb) {
+  .controller('LoginCtrl', function (Shared, Api, Auth, $location, User, toastr) {
     var vm = this;
     Api.all('states')
       .then(res => {
