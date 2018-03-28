@@ -11,7 +11,7 @@ angular.module('annClientApp')
   .factory('Auth', ['$http', '$q', '$location', '$rootScope', 'User', function ($http, $q, $location, $rootScope, User) {
 
     //var baseUrl = 'http://ncas.nigerianbar.org.ng/api';
-    var baseUrl = 'http://localhost:8080';
+    var baseUrl = 'http://localhost:9001';
     return {
 
       /**
