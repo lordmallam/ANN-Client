@@ -103,7 +103,7 @@ angular
         controller: 'ProfileCtrl',
         controllerAs: 'profile'
       })
-      .when('/confirmation/:ac/mobile', {
+      .when('/confirmation/:ac/xyz/mobile', {
         templateUrl: 'views/mobile.html',
         controller: 'MobileCtrl',
         controllerAs: 'mobile'
