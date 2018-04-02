@@ -51,22 +51,30 @@ angular.module('annClientApp')
       return lga && lga.name || '---'
     };
 
-    vm.delete = prospect => {
-      console.log(prospect)
+    vm.decline = prospect => {
+      Api.getByActionId('prospects', 'decline', prospect._id)
+        .then(res => {
+          vm.prospects = res.map(rec => (rec.doc))
+          vm.prospects = _.reverse(_.sortBy(vm.prospects, (o) => (
+            new Date(o.modifiedOn)
+          )));
+          toastr.success(`${prospect.firstname} ${prospect.surname} was declined`, 'Decline');
+        })
+        .catch(err => {
+          console.log(err);
+          err.data ? toastr.error(err.data && err.data.message, err.data && err.data.error) :
+            toastr.error(err.message, err.error)
+        });
     };
 
     vm.approve = prospect => {
       Api.getByActionId('prospects', 'approve', prospect._id)
-        .then(() => {
-          Api.all('prospects')
-            .then(res => {
-              vm.prospects = res.map(rec => (rec.doc))
-              vm.prospects = _.reverse(_.sortBy(vm.prospects, (o) => (
-                new Date(o.modifiedOn)
-              )));
-              toastr.success(`${prospect.firstname} ${prospect.surname} was approved`, 'Approval');
-            })
-            .catch(err => console.log(err))
+        .then(res => {
+          vm.prospects = res.map(rec => (rec.doc))
+          vm.prospects = _.reverse(_.sortBy(vm.prospects, (o) => (
+            new Date(o.modifiedOn)
+          )));
+          toastr.success(`${prospect.firstname} ${prospect.surname} was approved`, 'Approval');
         })
         .catch(err => {
           console.log(err);

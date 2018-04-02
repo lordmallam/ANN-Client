@@ -8,7 +8,7 @@
  * Controller of the annClientApp
  */
 angular.module('annClientApp')
-  .controller('NewAgentCtrl', function (Api, Shared) {
+  .controller('NewAgentCtrl', function (Api, Shared, toastr, $location) {
     const vm = this;
     vm.members = [];
     vm.stateList = [];
@@ -48,14 +48,31 @@ angular.module('annClientApp')
     };
 
     vm.search = event => {
+      if (Shared.isEmpty(vm.searchText)) {
+        toastr.error('Enter email to search', 'Empty Field')
+        return
+      }
       Api.getByActionId('members', 'by-email', vm.searchText)
         .then(res => {
           vm.members = [res]
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+          err.data ? toastr.error(err.data && err.data.message, err.data && err.data.error) :
+            toastr.error(err.message, err.error)
+          console.log(err);
+        })
     };
 
     vm.assign = member => {
-      console.log(member)
+      Api.getByActionId('users', 'assign-agent', member._id)
+        .then(res => {
+          toastr.success(`${member.firstname} is now an agent`, 'Agent assigned')
+          $location.path('/manage-agents');
+        })
+        .catch(err => {
+          err.data ? toastr.error(err.data && err.data.message, err.data && err.data.error) :
+            toastr.error(err.message, err.error)
+          console.log(err);
+        })
     };
   });

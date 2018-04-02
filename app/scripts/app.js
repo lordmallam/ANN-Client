@@ -128,6 +128,11 @@ angular
         controller: 'NewAgentCtrl',
         controllerAs: 'newAgent'
       })
+      .when('/admin/profile/:id', {
+        templateUrl: 'views/admin-profile.html',
+        controller: 'AdminProfileCtrl',
+        controllerAs: 'adminProfile'
+      })
       .otherwise({
         redirectTo: '/'
       });

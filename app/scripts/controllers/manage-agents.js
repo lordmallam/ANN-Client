@@ -21,4 +21,17 @@ angular.module('annClientApp')
         err.data ? toastr.error(err.data && err.data.message, err.data && err.data.error) :
           toastr.error(err.message, err.error)
       })
+
+    vm.delete = user => {
+      Api.getByActionId('users', 'remove-agent', user.member)
+        .then(res => {
+          toastr.success(`${user.firstname} is no longer an agent`, 'Agent removed')
+          vm.agents = res;
+        })
+        .catch(err => {
+          err.data ? toastr.error(err.data && err.data.message, err.data && err.data.error) :
+            toastr.error(err.message, err.error)
+          console.log(err);
+        })
+    };
   });

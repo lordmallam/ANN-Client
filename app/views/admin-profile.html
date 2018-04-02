@@ -1,0 +1,103 @@
+<div ng-include="'components/nav/header.user.html'"></div>
+<div class="ui grid">
+      <div class="row">
+        <div ng-include="'components/nav/sidebar.html'"></div>
+        <div class="column" id="content">
+          <div class="ui grid">
+            <div id="dashboard-box" class="two column aligned row profile">
+              <div class="three wide column">
+                    <img class="ui medium bordered image" src="{{adminProfile.photo}}">
+              </div>
+              <div class="thirteen wide column">
+                <div>
+                    <h2 class="ui header name-txt">{{adminProfile.member.firstname}} {{adminProfile.member.surname}}</h2>
+                  <span class="ui red horizontal label member-status" ng-if="adminProfile.member.status === 'inactive'">Not Active</span>
+                      <span class="ui green horizontal label member-status" ng-if="adminProfile.member.status === 'completed' || adminProfile.member.status === 'active'">Active</span>
+                        
+                    <div class="ui grid">
+                      <div class="eight wide column">
+                        <span class="info-title">
+                        Membership Number:
+                      </span><br />
+                      <span style="font-weight: bold; font-size: 16px">
+                        {{adminProfile.member.memberId}}
+                      </span><br /><br />
+                        <span class="info-title">
+                        Member Since:
+                      </span><br />
+                        <span style="font-weight: bold; font-size: 16px">
+                          {{adminProfile.member.createdOn | date: 'dd MMMM, yyyy'}}
+                        </span>
+                      </div>
+                      <div class="eight wide column">
+                        
+                      </div>
+                    </div>
+
+                    <div class="ui pointing secondary menu">
+                      <tab class="item active" icon="user icon" data-tab="first" style="cursor:pointer">
+                      Basic Information
+                      </tab>
+                      <tab class="item" data-tab="last" icon="user circle icon" style="cursor:pointer">
+                      Next of Kin
+                      </tab>
+                    </div>
+                          <div class="ui tab segment grid active no-shadow" data-tab="first">
+                            
+                                <div class="four wide column">
+                                   <p><strong>Sex:</strong> </p> 
+                                   <p><strong>Birthday:</strong> </p> 
+                                   <p><strong>Phone Number:</strong> </p> 
+                                   <p><strong>Email Address:</strong> </p> 
+                                   <p><strong>Address:</strong> </p>
+                                  <p><strong>State:</strong> </p>
+                                  <p><strong>Local Government Area:</strong> </p> 
+
+                                </div>
+
+                                <div class="eight wide column">
+                                   <p>{{adminProfile.member.sex || '--'}}</p> 
+                                   <p>{{adminProfile.member.dateOfBirth | date:'dd MMMM, yyyy' || '--'}}</p> 
+                                   <p>{{adminProfile.member.phone || '--'}}</p> 
+                                   <p>{{adminProfile.member.email || '--'}}</p> 
+                                   <p>{{adminProfile.member.residenceAddress || '--'}}</p>
+                                  <p>{{adminProfile.state || '--'}}</p>
+                                  <p>{{adminProfile.lga || '--'}}</p>
+                                </div>
+                          </div>
+                          <div class="ui tab segment grid no-shadow" data-tab="last">
+                            
+                                <div class="four wide column">
+                                   <p><strong>Name:</strong> </p> 
+                                   <p><strong>Birthday:</strong> </p> 
+                                   <p><strong>Sex:</strong> </p> 
+                                   <p><strong>Email Address:</strong> </p> 
+                                   <p><strong>Phone Number:</strong> </p>
+                                  <p><strong>State:</strong> </p>
+                                  <p><strong>Nationality:</strong> </p> 
+
+                                </div>
+
+                                <div class="eight wide column">
+                                   <p>{{adminProfile.member.nok.firstname || '--'}} {{adminProfile.member.nok.surname}}</p> 
+                                   <p>{{adminProfile.member.nok.dateOfBirth | date:'dd MMMM, yyyy' || '--'}}</p> 
+                                   <p>{{adminProfile.member.nok.sex || '--'}}</p> 
+                                   <p>{{adminProfile.member.nok.email || '--'}}</p> 
+                                   <p>{{adminProfile.member.nok.phone || '--'}}</p>
+                                  <p>{{adminProfile.nokstate || '--'}}</p>
+                                  <p>{{adminProfile.member.nok.nationality || '--'}}</p>
+                                </div>
+                          </div>
+                          
+                </div>
+              </div>
+            
+            </div>
+            <div class="ui hidden section divider"></div>
+            <div class="row">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -27,6 +27,12 @@
   /* ...and now for the proper property */
   transition:.5s;
 }
+
+.info-title{
+  font-size: 10px;
+  color: #338FC2;
+}
+
 #sidebar .ui.menu > a.item.active {
   background-color: #338FC2;
   color: white;
@@ -48,7 +54,7 @@
   background-color: orangered;
 }
 
-.green {
+.indicator.green{
   background-color:lightseagreen;
 }
 

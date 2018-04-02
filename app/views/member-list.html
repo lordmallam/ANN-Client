@@ -16,9 +16,9 @@
                               <tr>
                                   <th>Name</th>
                                   <th>Surname</th>
+                                  <th>Member ID</th>
                                   <th>Date of birth</th>
                                   <th>Sex</th>
-                                  <th>Email</th>
                                   <th>Phone</th>
                                   <th>State</th>
                                   <th>Local Govt.</th>
@@ -27,11 +27,11 @@
                               </tr></thead>
                               <tbody>
                                 <tr ng-repeat="member in memberList.members | filter:memberList.searchText">
-                                  <td>{{member.firstname}}</td>
+                                  <td><a ng-href="/admin/profile/{{member._id}}">{{member.firstname}}</a></td>
                                   <td>{{member.surname}}</td>
-                                  <td>{{member.dateOfBirth | date: 'dd MMM, yyyy'}}</td>
+                                  <td>{{member.memberId}}</td>
+                                  <td>{{member.dateOfBirth | utc | date: 'dd MMM, yyyy'}}</td>
                                   <td>{{member.sex}}</td>
-                                  <td>{{member.email}}</td>
                                   <td>{{member.phone}}</td>
                                   <td>{{memberList.getState(member.state)}}</td>
                                   <td>{{memberList.getLGA(member.lga)}}</td>
@@ -46,6 +46,7 @@
                                 </tr>
                               </tbody>
                             </table>
+                            <ul uib-pagination boundary-links="true" total-items="memberList.filterData.length" items-per-page="memberList.pageSize" ng-model="memberList.currentPage" class="pagination-sm pull-right" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
                           </div>
                 </div>
               </div>

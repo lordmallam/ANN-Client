@@ -4,9 +4,8 @@
     "\\app",
     "\\app\\scripts",
     "\\app\\scripts\\controllers",
-    "\\app\\scripts\\services",
-    "\\bower_components"
+    "\\app\\views"
   ],
-  "SelectedNode": "\\app\\scripts\\controllers\\login.js",
+  "SelectedNode": "\\app\\views\\agent-registrations.html",
   "PreviewInSolutionExplorer": false
 }

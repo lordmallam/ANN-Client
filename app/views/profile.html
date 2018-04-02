@@ -11,18 +11,33 @@
               <div class="thirteen wide column">
                 <div>
                     <h2 class="ui header name-txt">{{profile.member.firstname}} {{profile.member.surname}}</h2>
-                    <p class="group-txt">
-                      <span ng-repeat="role in profile.roles">
-                        Roles: {{role}} | 
-                      </span><br />
-
-                      <span style="font-weight: bold; color: gray; font-size: 10px">
-                        MEMBER SINCE {{profile.member.createdOn | date: 'dd MMMM, yyyy'}}
-                      </span>
-                            <span class="ui red horizontal label member-status" ng-if="profile.member.status === 'inactive'">Not Active</span>
+                  <span class="ui red horizontal label member-status" ng-if="profile.member.status === 'inactive'">Not Active</span>
                       <span class="ui green horizontal label member-status" ng-if="profile.member.status === 'completed' || profile.member.status === 'active'">Active</span>
-                            <!-- Active use green color (change red to green) -->
-                    </p>
+                        
+                    <div class="ui grid">
+                      <div class="eight wide column">
+                        <span class="info-title">
+                        Membership Number:
+                      </span><br />
+                      <span style="font-weight: bold; font-size: 16px">
+                        {{profile.member.memberId}}
+                      </span><br /><br />
+                        <span class="info-title">
+                        Member Since:
+                      </span><br />
+                        <span style="font-weight: bold; font-size: 16px">
+                          {{profile.member.createdOn | date: 'dd MMMM, yyyy'}}
+                        </span>
+                      </div>
+                      <div class="eight wide column">
+                        <span class="info-title">
+                        Roles:
+                      </span><br />
+                      <span style="font-weight: bold; font-size: 16px" ng-repeat="role in profile.roles">
+                       {{role}} | 
+                      </span>
+                      </div>
+                    </div>
                     
                     <div>   
                             <a class="ui blue button edit-btn" ng-href="/confirmation/{{profile.member.activationCode}}/{{profile.member._id}}">
