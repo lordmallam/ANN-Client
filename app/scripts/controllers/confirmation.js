@@ -22,7 +22,7 @@ angular.module('annClientApp')
     const activationCode = $routeParams.ac;
     let id = $routeParams.id;
     if (!activationCode) {
-      $location.path('/');
+      $location.path('/login');
     }
     vm.isLoading = true;
     Api.getByAction('members', `register/activation/${activationCode}`)

@@ -309,3 +309,19 @@ color:#fff !important;
   }
 }
 
+@media screen and (max-width: 767px) { 
+  #login-page .img-section {
+    display: none;
+  }
+
+  #login-page .row {
+    margin: 0
+  }
+
+  #right-pane {
+    width: 100%;
+    box-shadow: none;
+    border: none;
+  }
+}
+

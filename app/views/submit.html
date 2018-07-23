@@ -7,13 +7,12 @@
           <span id="my-icon"><i class="check circle icon"></i></span>
           <div>
             <h3>
-              Registration Completed!
-
+              {{submit.header}}
             </h3>
-            <p>Login to your profile either on the web using the link below or on our user friendly mobile apps</p>
+            <p>{{submit.body}}</p>
           </div>
           <div class="ui centered aligned header">
-            <button class="ui button primary sign-in-btn" tabindex="0" ng-click="submit.gotoLogin()">
+            <button class="ui button primary sign-in-btn" tabindex="0" ng-click="submit.gotoLogin()" ng-if="submit.loginButton">
               Login to your Profile
             </button>
           </div>

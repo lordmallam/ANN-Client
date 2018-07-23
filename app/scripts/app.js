@@ -133,7 +133,17 @@ angular
         controller: 'AdminProfileCtrl',
         controllerAs: 'adminProfile'
       })
+      .when('/request-reset', {
+        templateUrl: 'views/request-reset.html',
+        controller: 'RequestResetCtrl',
+        controllerAs: 'requestReset'
+      })
+      .when('/request-reset/password/:token', {
+        templateUrl: 'views/request-reset/password.html',
+        controller: 'RequestResetPasswordCtrl',
+        controllerAs: 'requestResetPassword'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/login'
       });
   });

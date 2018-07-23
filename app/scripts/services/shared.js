@@ -15,6 +15,12 @@ angular.module('annClientApp')
     let States = [];
     let LGAs = [];
 
+    let submitParams = {
+      header: '',
+      body: '',
+      loginButton: false
+    }
+
     const isUndefinedOrNull = value => (angular.isUndefined(value) || value === '' || value === ' ' || value === '  ');
 
     const toCamelCase = str => {
@@ -38,6 +44,16 @@ angular.module('annClientApp')
     };
 
     const getRegisteringUser = user => (registeringUser);
+
+    const setSubmitParams = (header='', body='', loginButton=false) => {
+      submitParams = {
+        header,
+        body,
+        loginButton
+      }
+    }
+
+    const getSubmitParams = () => (submitParams)
 
     const setStates = states => {
       States = states;
@@ -221,7 +237,9 @@ angular.module('annClientApp')
       setStates,
       getStates,
       setLGAs,
-      getLGAs
+      getLGAs,
+      getSubmitParams,
+      setSubmitParams
     };
 
   });

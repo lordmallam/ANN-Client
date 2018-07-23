@@ -1,0 +1,25 @@
+<div id="login-page" class="ui two column grid site-box">
+  <div class="row no-padding">
+      <div class="column no-padding img-section">
+          
+      </div>
+      <div id="right-pane" class="column ui padded segment">
+          <img class="ui centered image" src="images/Aliance-logo.png" />
+          <h2 class="ui header centered padd-title h-title">Reset your Password Here</h2>
+          <form class="ui fluid form">
+              <div class="field">
+                  <input type="text" placeholder="Email" ng-model="requestReset.email">
+              </div>
+              <div class="ui center aligned header">
+                  <button class="ui primary button sign-in-btn" ng-click="requestReset.reset()">
+                      Reset Password
+                   </button>
+
+                  <div class="ui center aligned header f-pass-txt"><a href="/login">Member Login</a></div>
+                <br />
+                <span class="error">{{requestReset.error}}</span>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

@@ -13,6 +13,7 @@ angular.module('annClientApp')
     
     // var URL = 'http://localhost:9001/api/';
     var URL = 'http://ann.westeurope.cloudapp.azure.com/api/';
+    var UMSURL = 'http://ann.westeurope.cloudapp.azure.com/ums/';
     function all(entity) {
       var requestURL = URL + entity;
       return $http.get(requestURL)
@@ -48,6 +49,17 @@ angular.module('annClientApp')
 
     function addByAction(entity, action, payload) {
       var requestURL = URL + entity + "/" + action;
+      return $http.post(requestURL, payload)
+        .then(function (res) {
+          return res.data;
+        })
+        .catch(function (res) {
+          return $q.reject(res);
+        });
+    }
+
+    function postUserByAction(entity, action, payload) {
+      var requestURL = UMSURL + entity + "/" + action;
       return $http.post(requestURL, payload)
         .then(function (res) {
           return res.data;
@@ -145,6 +157,7 @@ function deletedByAction(entity, action, payload) {
       deletedByAction: deletedByAction,
       approveActivity: approveActivity,
       editByAction: editByAction,
-      getById: getById
+      getById: getById,
+      postUserByAction: postUserByAction
     };
   });
