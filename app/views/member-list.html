@@ -30,7 +30,7 @@
                                   <td><a ng-href="/admin/profile/{{member._id}}">{{member.firstname}}</a></td>
                                   <td>{{member.surname}}</td>
                                   <td>{{member.memberId}}</td>
-                                  <td>{{member.dateOfBirth | utc | date: 'dd MMM, yyyy'}}</td>
+                                  <td>{{member.dateOfBirth | date: 'dd MMM, yyyy'}}</td>
                                   <td>{{member.sex}}</td>
                                   <td>{{member.phone}}</td>
                                   <td>{{memberList.getState(member.state)}}</td>
