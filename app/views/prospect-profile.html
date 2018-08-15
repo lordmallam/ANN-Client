@@ -1,0 +1,109 @@
+<div ng-include="'components/nav/header.user.html'"></div>
+<div class="ui grid">
+      <div class="row">
+        <div ng-include="'components/nav/sidebar.html'"></div>
+        <div class="column" id="content">
+          <div class="ui grid">
+            <div id="dashboard-box" class="two column aligned row profile">
+              <div class="three wide column">
+                    <img class="ui medium bordered image" src="{{prospectProfile.photo}}">
+              </div>
+              <div class="thirteen wide column">
+                <div>
+                    <h2 class="ui header name-txt">{{prospectProfile.member.firstname}} {{prospectProfile.member.surname}}</h2>
+                  <span class="ui red horizontal label member-status" ng-if="prospectProfile.member.status === 'inactive'">Not Active</span>
+                      <span class="ui green horizontal label member-status" ng-if="prospectProfile.member.status === 'completed' || prospectProfile.member.status === 'active'">Active</span>
+                        
+                    <div class="ui grid">
+                      <div class="eight wide column">
+                        <span class="info-title">
+                        Registered On:
+                      </span><br />
+                        <span style="font-weight: bold; font-size: 16px">
+                          {{prospectProfile.member.createdOn | date: 'dd MMMM, yyyy'}}
+                        </span>
+                      </div>
+                      <div class="eight wide column">
+                        <div class="pull-right">   
+                          <a class="ui green button edit-btn" 
+                          ng-click="prospectProfile.approve(prospectProfile.member)">
+                                  <i class="fa fa-check"></i> &nbsp;
+                                  Approve
+                          </a>
+                          <a class="ui red button edit-btn" style="margin-left: 10px"
+                          ng-click="prospectProfile.decline(prospectProfile.member)">
+                            <i class="fa fa-ban"></i> &nbsp;
+                            Decline
+                    </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ui pointing secondary menu">
+                      <tab class="item active" icon="user icon" data-tab="first" style="cursor:pointer">
+                      Basic Information
+                      </tab>
+                      <tab class="item" data-tab="last" icon="user circle icon" style="cursor:pointer">
+                      Next of Kin
+                      </tab>
+                    </div>
+                          <div class="ui tab segment grid active no-shadow" data-tab="first">
+                            
+                                <div class="four wide column">
+                                   <p><strong>Sex:</strong> </p> 
+                                   <p><strong>Birthday:</strong> </p> 
+                                   <p><strong>Phone Number:</strong> </p> 
+                                   <p><strong>Email Address:</strong> </p> 
+                                   <p><strong>Address:</strong> </p>
+                                  <p><strong>State:</strong> </p>
+                                  <p><strong>Local Government Area:</strong> </p> 
+
+                                </div>
+
+                                <div class="eight wide column">
+                                   <p>{{prospectProfile.member.sex || '--'}}</p> 
+                                   <p>{{prospectProfile.member.dateOfBirth | date:'dd MMMM, yyyy' || '--'}}</p> 
+                                   <p>{{prospectProfile.member.phone || '--'}}</p> 
+                                   <p>{{prospectProfile.member.email || '--'}}</p> 
+                                   <p>{{prospectProfile.member.residenceAddress || '--'}}</p>
+                                  <p>{{prospectProfile.state || '--'}}</p>
+                                  <p>{{prospectProfile.lga || '--'}}</p>
+                                </div>
+                          </div>
+                          <div class="ui tab segment grid no-shadow" data-tab="last">
+                            
+                                <div class="four wide column">
+                                   <p><strong>Name:</strong> </p> 
+                                   <p><strong>Birthday:</strong> </p> 
+                                   <p><strong>Sex:</strong> </p> 
+                                   <p><strong>Email Address:</strong> </p> 
+                                   <p><strong>Phone Number:</strong> </p>
+                                  <p><strong>State:</strong> </p>
+                                  <p><strong>Nationality:</strong> </p> 
+
+                                </div>
+
+                                <div class="eight wide column">
+                                   <p>{{prospectProfile.member.nok.firstname || '--'}} {{prospectProfile.member.nok.surname}}</p> 
+                                   <p>{{prospectProfile.member.nok.dateOfBirth | date:'dd MMMM, yyyy' || '--'}}</p> 
+                                   <p>{{prospectProfile.member.nok.sex || '--'}}</p> 
+                                   <p>{{prospectProfile.member.nok.email || '--'}}</p> 
+                                   <p>{{prospectProfile.member.nok.phone || '--'}}</p>
+                                  <p>{{prospectProfile.nokstate || '--'}}</p>
+                                  <p>{{prospectProfile.member.nok.nationality || '--'}}</p>
+                                </div>
+                          </div>
+                          
+                </div>
+              </div>
+            
+            </div>
+            <div class="ui hidden section divider"></div>
+            <div class="row">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+

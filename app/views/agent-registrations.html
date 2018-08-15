@@ -9,13 +9,13 @@
                 <div>
                     <h2 class="ui header name-txt inline-display">Agent Registered Members</h2>
                     <div class="ui input right floated pull-right" style="padding: 10px 0;"><input type="text" placeholder="Search..." ng-model="agentRegistrations.searchText"/></div>
+                    
                           <div>
                             <span style="padding: 10px">{{agentRegistrations.filterData.length}} awaiting approval</span>
                             <table class="ui celled table">
                               <thead>
                               <tr>
                                   <th>Name</th>
-                                  <th>Surname</th>
                                   <th>Date of birth</th>
                                   <th>Sex</th>
                                   <th>Email</th>
@@ -26,8 +26,7 @@
                               </tr></thead>
                               <tbody>
                                 <tr ng-repeat="prospect in agentRegistrations.filterData = (agentRegistrations.prospects | filter:agentRegistrations.searchText ) | limitTo:agentRegistrations.pageSize:agentRegistrations.pageSize*(agentRegistrations.currentPage-1) ">
-                                  <td>{{prospect.firstname}}</td>
-                                  <td>{{prospect.surname}}</td>
+                                  <td><a ng-href="/prospect/profile/{{prospect._id}}">{{prospect.firstname}} {{prospect.surname}}</a></td>
                                   <td>{{prospect.dateOfBirth | date: 'dd MMM, yyyy'}}</td>
                                   <td>{{prospect.sex}}</td>
                                   <td>{{prospect.email}}</td>

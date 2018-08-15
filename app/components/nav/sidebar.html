@@ -2,6 +2,7 @@
           <div class="ui secondary vertical fluid menu">
             <div class="ui secondary vertical fluid menu">
               <a class="item" ng-class="{'active': sidebar.isPage('/profile')}" href="profile"><i class="user layout icon"></i> My Profile</a>
+              <a class="item" ng-class="{'active': sidebar.isPage('/new-member')}" ng-if="sidebar.isAgent()" href="new-member"><i class="plus layout icon"></i> New Member</a>
               <a class="item" ng-class="{'active': sidebar.isPage('/member-list')}" ng-if="sidebar.isAdmin()" href="member-list"><i class="list layout icon"></i> Member List</a>
               <a class="item" ng-class="{'active': sidebar.isPage('/agent-registrations')}" ng-if="sidebar.isAdmin()" href="agent-registrations"><i class="clipboard list icon"></i> Agents Registrations</a>
               <a class="item" ng-class="{'active': sidebar.isPage('/manage-agents')}" ng-if="sidebar.isAdmin()" href="manage-agents"><i class="id card icon"></i> Manage Agents</a>

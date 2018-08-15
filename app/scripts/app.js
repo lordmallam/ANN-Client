@@ -143,6 +143,21 @@ angular
         controller: 'RequestResetPasswordCtrl',
         controllerAs: 'requestResetPassword'
       })
+      .when('/new-member', {
+        templateUrl: 'views/new-member.html',
+        controller: 'NewMemberCtrl',
+        controllerAs: 'newMember'
+      })
+      .when('/prospect/profile/:id', {
+        templateUrl: 'views/prospect-profile.html',
+        controller: 'ProspectProfileCtrl',
+        controllerAs: 'prospectProfile'
+      })
+      .when('/member/submit', {
+        templateUrl: 'views/member/submit.html',
+        controller: 'MemberSubmitCtrl',
+        controllerAs: 'member/submit'
+      })
       .otherwise({
         redirectTo: '/login'
       });

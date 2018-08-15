@@ -16,4 +16,7 @@ angular.module('annClientApp')
     vm.isAdmin = () => {
       return roles && roles.includes('Admin');
     };
+    vm.isAgent = () => {
+      return roles && roles.includes('Agent');
+    };
   });

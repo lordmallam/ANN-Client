@@ -21,7 +21,7 @@ angular.module('annClientApp')
       loginButton: false
     }
 
-    const isUndefinedOrNull = value => (angular.isUndefined(value) || value === '' || value === ' ' || value === '  ');
+    const isUndefinedOrNull = value => (angular.isUndefined(value) || value === '' || value === ' ' || value === '  ' || value === null);
 
     const toCamelCase = str => {
       var f = str.toLowerCase();
